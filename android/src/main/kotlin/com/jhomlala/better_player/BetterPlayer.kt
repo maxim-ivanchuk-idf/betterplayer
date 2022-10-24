@@ -717,8 +717,7 @@ internal class BetterPlayer(
                 .addOverride(
                     TrackSelectionOverride(
                         mappedTrackInfo.getTrackGroups(rendererIndex).get(groupIndex),
-                        mappedTrackInfo.getTrackGroups(rendererIndex)
-                            .indexOf(mappedTrackInfo.getTrackGroups(rendererIndex).get(groupIndex))
+                        groupElementIndex,
                     )
                 )
 
