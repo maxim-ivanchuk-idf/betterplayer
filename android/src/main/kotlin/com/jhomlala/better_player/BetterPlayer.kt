@@ -708,7 +708,7 @@ internal class BetterPlayer(
     private fun setAudioTrack(rendererIndex: Int, groupIndex: Int, groupElementIndex: Int) {
         val mappedTrackInfo = trackSelector.currentMappedTrackInfo
         if (mappedTrackInfo != null) {
-            val builder = trackSelector.parameters.buildUpon()
+           trackSelector.parameters.buildUpon()
                 .setRendererDisabled(rendererIndex, false)
                 .addOverride(
                     TrackSelectionOverride(
@@ -716,8 +716,6 @@ internal class BetterPlayer(
                         groupElementIndex,
                     )
                 )
-
-            trackSelector.parameters = builder
         }
     }
 
