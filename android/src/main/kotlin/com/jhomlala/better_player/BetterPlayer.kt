@@ -73,12 +73,12 @@ internal class BetterPlayer(
     customDefaultLoadControl: CustomDefaultLoadControl?,
     result: MethodChannel.Result
 ) {
-    private val exoPlayer: ExoPlayer?
+    var exoPlayer: ExoPlayer?
     private val eventSink = QueuingEventSink()
     private val trackSelector: DefaultTrackSelector = DefaultTrackSelector(context)
     private val loadControl: LoadControl
     private var isInitialized = false
-    private var surface: Surface? = null
+    var surface: Surface? = null
     private var key: String? = null
     private var playerNotificationManager: PlayerNotificationManager? = null
     private var refreshHandler: Handler? = null
