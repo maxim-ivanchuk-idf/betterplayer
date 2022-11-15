@@ -589,14 +589,14 @@ internal class BetterPlayer(
             event["key"] = key
             event["duration"] = getDuration()
             if (exoPlayer?.videoFormat != null) {
-                val videoFormat = exoPlayer.videoFormat
+                val videoFormat = exoPlayer?.videoFormat
                 var width = videoFormat?.width
                 var height = videoFormat?.height
                 val rotationDegrees = videoFormat?.rotationDegrees
                 // Switch the width/height if video was taken in portrait mode
                 if (rotationDegrees == 90 || rotationDegrees == 270) {
-                    width = exoPlayer.videoFormat?.height
-                    height = exoPlayer.videoFormat?.width
+                    width = exoPlayer?.videoFormat?.height
+                    height = exoPlayer?.videoFormat?.width
                 }
                 event["width"] = width
                 event["height"] = height
