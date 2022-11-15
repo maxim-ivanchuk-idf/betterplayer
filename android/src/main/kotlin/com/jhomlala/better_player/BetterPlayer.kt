@@ -73,12 +73,12 @@ internal class BetterPlayer(
     customDefaultLoadControl: CustomDefaultLoadControl?,
     result: MethodChannel.Result
 ) {
-    var exoPlayer: ExoPlayer?
+    private var exoPlayer: ExoPlayer?
     private val eventSink = QueuingEventSink()
     private val trackSelector: DefaultTrackSelector = DefaultTrackSelector(context)
     private val loadControl: LoadControl
     private var isInitialized = false
-    var surface: Surface? = null
+    private var surface: Surface? = null
     private var key: String? = null
     private var playerNotificationManager: PlayerNotificationManager? = null
     private var refreshHandler: Handler? = null
@@ -312,7 +312,7 @@ internal class BetterPlayer(
         playerNotificationManager?.apply {
 
             exoPlayer?.let {
-                setPlayer(ForwardingPlayer(exoPlayer))
+                setPlayer(ForwardingPlayer(exoPlayer!!))
                 setUseNextAction(false)
                 setUsePreviousAction(false)
                 setUseStopAction(false)
